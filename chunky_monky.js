@@ -5,7 +5,17 @@ returns them as a two-dimensional array.
 */
 
 function chunkArrayInGroups(arr, size) {
-    return arr;
+    //initialize a new array to hold arrays that the for loop will create
+    let newArr = [];
+
+    //I just turned off Copilot completions because it was actually confusing me.
+    //This for loop will iterate through the array inputed into the function.
+    for (let i = 0; i < size.length; i++) {
+
+    }
+
+
+    return newArr;
   }
   
   chunkArrayInGroups(["a", "b", "c", "d"], 2);
