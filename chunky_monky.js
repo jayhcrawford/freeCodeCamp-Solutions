@@ -7,13 +7,18 @@ returns them as a two-dimensional array.
 function chunkArrayInGroups(arr, size) {
     //initialize a new array to hold arrays that the for loop will create
     let newArr = [];
+    let newArr2 = [];
 
     //I just turned off Copilot completions because it was actually confusing me.
     //This for loop will iterate through the array inputed into the function.
-    for (let i = 0; i < size.length; i++) {
-
+    for (let i = 0; i < arr.length; i++) {
+        newArr2.push(arr[i]);
+        console.log(newArr2)
+        if (i )
+        //I just realized that this might be a Do - While loop.
+        
+    
     }
-
 
     return newArr;
   }
