@@ -13,16 +13,21 @@ function chunkArrayInGroups(arr, size) {
     let shifter = 0;
     let i = 0;
 
-    //This does not work. I thought that using a shifter to close the current array, and then pushing that array into the other new array would work.
+    //This is getting me close to finding the result.
     do {
         newArr2.push(arr[i]);
         ++shifter;
-        if (shifter == size) {
-          newArr.push([newArr2]);
-          newArr2 = [];
-        }
-    console.log(newArr2);
+        console.log("The array is at: " + newArr2);
+        console.log(shifter);
         i++;
+        if (shifter == size) {
+          console.log("time to start again");
+          //newArr2.push(newArr2);
+          newArr2 = [];
+          shifter = 0;
+        }
+        console.log(newArr2);
+
     }   while (i < arr.length);
 
     return newArr;
