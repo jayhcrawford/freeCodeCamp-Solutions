@@ -1,3 +1,5 @@
+//OMG. I just realized that I was calling the function twice. Shame. D`:
+
 function chunkArrayInGroups(arr, size) {
   let newArr = [];
   let newArr2 = [];
@@ -26,5 +28,5 @@ function chunkArrayInGroups(arr, size) {
 
 
 
-console.log(chunkArrayInGroups(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3)));
+console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3));
 console.log("This is the solution.")
