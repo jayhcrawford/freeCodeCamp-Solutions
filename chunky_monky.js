@@ -9,19 +9,25 @@ function chunkArrayInGroups(arr, size) {
     let newArr = [];
     let newArr2 = [];
 
-    //I just turned off Copilot completions because it was actually confusing me.
-    //This for loop will iterate through the array inputed into the function.
-    for (let i = 0; i < arr.length; i++) {
+    //I'm adding these variables to manipulate in the Do - While Loop.
+    let shifter = 0;
+    let i = 0;
+
+    //This does not work. I thought that using a shifter to close the current array, and then pushing that array into the other new array would work.
+    do {
         newArr2.push(arr[i]);
-        console.log(newArr2)
-        if (i )
-        //I just realized that this might be a Do - While loop.
-        
-    
-    }
+        ++shifter;
+        if (shifter == size) {
+          newArr.push([newArr2]);
+          newArr2 = [];
+        }
+    console.log(newArr2);
+        i++;
+    }   while (i < arr.length);
 
     return newArr;
   }
+
   
   chunkArrayInGroups(["a", "b", "c", "d"], 2);
 
