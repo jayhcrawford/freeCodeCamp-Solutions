@@ -13,21 +13,25 @@ function chunkArrayInGroups(arr, size) {
     let shifter = 0;
     let i = 0;
 
-    //This is getting me close to finding the result.
+    //Here we go!!! I almost have it. Now I only need to write the final conditional "If" that will push the final array if it is smaller 
+    //than the "shifter" size, but the iterations (with i) have been successfully fulfilled.
     do {
         newArr2.push(arr[i]);
         ++shifter;
-        console.log("The array is at: " + newArr2);
-        console.log(shifter);
+        console.log("The array is at: ");
+        console.log(newArr2);
+        console.log("The shifter is at: " + shifter);
         i++;
         if (shifter == size) {
           console.log("time to start again");
-          //newArr2.push(newArr2);
+          newArr.push(newArr2);
           newArr2 = [];
           shifter = 0;
         }
-        console.log(newArr2);
-
+    console.log("___________")
+    console.log("The final array is at: ");
+    console.log(newArr);
+    console.log("___________");
     }   while (i < arr.length);
 
     return newArr;
