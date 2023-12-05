@@ -1,4 +1,4 @@
-//OMG. I just realized that I was calling the function twice. Shame. D`:
+//This feels like it's getting much closer to the solution.
 
 function chunkArrayInGroups(arr, size) {
   let newArr = [];
@@ -9,17 +9,23 @@ function chunkArrayInGroups(arr, size) {
     if (shifter == size) {
       newArr.push(newArr2);
       newArr2 = [];
+      newArr2.push(arr[i]);
       shifter = 0;
+    } else {
+      newArr2.push(arr[i]);
+      console.log(newArr2)
     }
-    newArr2.push(arr[i]);
     
-    console.log("This is what's in the solution array:")
-    console.log(newArr);
+    console.log("i is: " + i);
     ++shifter;
     console.log("shifter: " + shifter);
-    console.log("i is: " + i);
+    
 
   }
+
+  //console.log("This is what's in the nested array:")
+  //console.log(newArr2);
+    
 
   return newArr;
 }

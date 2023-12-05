@@ -37,5 +37,5 @@ function chunkArrayInGroups(arr, size) {
   //console.log(chunkArrayInGroups(["a", "b", "c", "d"], 2));
 
 
-console.log(chunkArrayInGroups(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3)));
+console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3));
 console.log("This is the solution.")
