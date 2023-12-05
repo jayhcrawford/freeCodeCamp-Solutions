@@ -1,4 +1,4 @@
-//This feels like it's getting much closer to the solution.
+//I got the answer. Here it is. Consult the original for naming changes and notes on the workings of this function.
 
 function chunkArrayInGroups(arr, size) {
   let newArr = [];
@@ -13,20 +13,13 @@ function chunkArrayInGroups(arr, size) {
       shifter = 0;
     } else {
       newArr2.push(arr[i]);
-      console.log(newArr2)
-    }
-    
-    console.log("i is: " + i);
+    }   
     ++shifter;
-    console.log("shifter: " + shifter);
-    
-
   }
 
-  //console.log("This is what's in the nested array:")
-  //console.log(newArr2);
-    
-
+  if (newArr2.length !== 0) {
+    newArr.push(newArr2);
+  }  
   return newArr;
 }
 

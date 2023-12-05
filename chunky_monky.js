@@ -1,41 +1,67 @@
-function chunkArrayInGroups(arr, size) {
-    //initialize a new array to hold arrays that the for loop will create
-    let newArr = [];
-    let newArr2 = [];
-    const arrayLength = arr.length;
+  //Here is the answer. Now I will attempt to explain this function's machinations.
 
-    //I just turned off Copilot completions because it was actually confusing me.
-    //This for loop will iterate through the array inputed into the function.
+  function chunkArrayInGroups(arr, size) {
+
+    //I initialize these two arrays with a wider scope than the "for" and "if" statements in order to build
+    //them up, empty them at times, and have something to return at the end. 
+    
+    //The finalArr will never be emptied. The nestedArr will be emptied whenever the "shifter" value == the 
+    //"size" value that is passed to the function as an argument.
+    let finalArr = [];
+    let nestedArr = [];
     let shifter = 0;
-    let i = 0;
 
-    do {
-        if (i !== arrayLength && newArr2.length !== 0) {
-          newArr2.push(arr[i]);
-        } 
-        
-        shifter++;
+    //This for loop will iterate through every value stored in the "arr" that's passed to function chunkArrayInGroups
+    //as the first argument.
+    for (let i = 0; i < arr.length; i++) {
+      
+      //This "if" statement works in conjunction with the ++shifter increment at the bottom of the encapsulating 
+      //"for" statement. Whenever shifter reaches the "size" inputted as an argument, this "if" statement will 
+      //execute.
+      if (shifter == size) {
+        //this push(); statement pushes nestedArr in its current form into finalArr.
+        finalArr.push(nestedArr);
 
-        console.log("shifter: " + shifter + ", i: " + i);
-        if (shifter == size) {
-          newArr.push(newArr2);
-          newArr2 = [];
-          shifter = 0;
-        }
-        
-        i++;
-        
-    }   while (i <= arr.length);
-    
-    
+        //this statement assigns the value of a fresh, empty array to nestedArr.
+        nestedArr = [];
 
-    return newArr;
+        //this statement pushes the current value of the argument "arr" into the freshly-empty, nestedArr.
+        nestedArr.push(arr[i]);
+
+        //this statement resets the shifter value back to 0.
+        shifter = 0;
+
+        //and we exit the "if" statement, and return to the "for" statement.
+
+
+        //this else statement takes care of any cases that do not satisfy the preceding "if" statement. 
+        //Basically, we need to make sure all other values get pushed into nestedArr when they need to be.
+      } else {
+        nestedArr.push(arr[i]);
+      }  
+      
+      //this statement increments the shifter value, which will be incremented each time the encapsulating
+      //"for" statement is iterateed.
+      ++shifter;
+    }
+
+
+
+    //this final "if" statement will take care of pushing nestedArr into finalArr if it wasn't pushed into 
+    //finalArr in the preceding "if" statement. Basically, the preceding statement will only ever push
+    //nestedArr into finalArr if the "shifter" value == the "size" argument value.
+
+    //This takes care of that potential condition. If the length of nestedArr == 0, than it's an empty array 
+    //and we don't want it pushed into the finalArr. That would spoil the solution.
+    if (nestedArr.length !== 0) {
+      finalArr.push(nestedArr);
+    }  
+    return finalArr;
   }
 
 
-  //chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4)
-  //console.log(chunkArrayInGroups(["a", "b", "c", "d"], 2));
 
 
-console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3));
-console.log("This is the solution.")
+
+  console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3));
+  console.log("This is the solution.")
