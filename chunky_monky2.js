@@ -1,13 +1,26 @@
 function chunkArrayInGroups(arr, size) {
-    newArr = [];
-    newArr2 = [];
+  let newArr = [];
+  let newArr2 = [];
+  let shifter = 0;
 
-    for (let i = 0; i < arr.length; i++) {
-      newArr2.push(arr[i]);
+  for (let i = 0; i < arr.length; i++) {
+    if (shifter == size) {
+      newArr.push(newArr2);
+      newArr2 = [];
+      shifter = 0;
     }
+    newArr2.push(arr[i]);
+    
+    console.log("This is what's in the solution array:")
+    console.log(newArr);
+    ++shifter;
+    console.log("shifter: " + shifter);
+    console.log("i is: " + i);
 
-    return newArr;
   }
+
+  return newArr;
+}
 
 
 
