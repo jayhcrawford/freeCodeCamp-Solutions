@@ -1,9 +1,13 @@
-//The nested-function checkBalance will return the total balance of the cash on hand in whatever array is inputted
-//into it.
+//This is already satisfying 3 of 5 parameters. 
 
 function checkCashRegister(price, cash, cid) {
     let change = cid;
-    let totalCashOnHand = 0;
+    let registerObject = {
+      status: "OPEN",
+      change: []
+    }
+  
+    console.log(registerObject)
   
   function checkBalance(cidArray) {
     let cashOnHand = cidArray;
@@ -16,11 +20,13 @@ function checkCashRegister(price, cash, cid) {
     cashOnHand = (total).toFixed(2);
     return cashOnHand
   }
-    checkBalance(change);
   
-    return change;
+    checkBalance(change);
+    if (checkBalance(change) < cash) {
+      registerObject.status = "INSUFFICIENT_FUNDS"
+    }
+  
+    return registerObject;
   }
   
   checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]);
-  
-  //console.log(checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]));
