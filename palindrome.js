@@ -1,7 +1,7 @@
 /*
-Adding the toLowerCase(); method into my string copying "If" statement solved the problem of capital letters
-in examples testing false. Now almost every example is testing true--with the exception of two examples
-that both contain special characters. That should be straightforward to fix... I think. 
+This is taking care of every single case with the exception of one case. The thing that is preventing it from
+testing "true" on that one case is the fact that it is "flipping" the '(' in the final phase of the test. I 
+am going to create a special case for parenthesis that will take care if this.
 */
 
 function palindrome(str) {
@@ -9,26 +9,30 @@ function palindrome(str) {
     let str2 = "";
     let regExp = /\s/;
     let regExpPunct = /[^\w\s]+/;
+    let regExpChar = /[\/():]+/;
     
     for (let i = 0; i<str.length; i++) {
     
-    let gg = regExp.test(str[i]);
-    let ff = regExpPunct.test(str[i]);
+    let spaces = regExp.test(str[i]);
+    let alphaNumSomeChars = regExpPunct.test(str[i]);
+    let specialChars = regExpChar.test(str[i]);
+    
+    if (specialChars == true) {
+          str1 += str[i]
+        }
 
-    //This is the string copying "If" Statement that I mentioned in the comment at page top.
-      if (ff == false){
-        if (gg == false) {
-        str1 += str[i].toLowerCase();
+      if (alphaNumSomeChars == false){
+        if (str[i] !== '_') {
+          if (spaces == false) {
+          str1 += str[i].toLowerCase();
+        }
+        }
       }
-      }
-      
     }
 
     for (let i = str1.length-1; i>=0; i--) {
       str2 += str1[i]
       }
-    console.log(str1)
-    console.log(str2)
   
     let truthChecker = true;
     for (let i = 0; i<str1.length; i++) {
@@ -37,13 +41,8 @@ function palindrome(str) {
       }
     }
     
-  
-  
     return truthChecker;
   }
   
- // palindrome("eye");
-  
-  palindrome("A man, a plan, a canal. Panama");
-  console.log("The solution: " + palindrome("My age is 0, 0 si ega ym."));
-
+console.log(palindrome("0_0 (: /-\ :) 0-0"));
+console.log(palindrome("_eye"));
