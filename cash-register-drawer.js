@@ -1,5 +1,5 @@
-//First I'm creating a nested function that will be able to calculate the balance of the cash on hand.
-//It will calculate it before and after any transaction, and return the appropriate sum when necessary.
+//The nested-function checkBalance will return the total balance of the cash on hand in whatever array is inputted
+//into it.
 
 function checkCashRegister(price, cash, cid) {
     let change = cid;
@@ -7,11 +7,13 @@ function checkCashRegister(price, cash, cid) {
   
   function checkBalance(cidArray) {
     let cashOnHand = cidArray;
+    let total = 0;
     for (let i = 0; i<cashOnHand.length; i++) {
       for (let j = 0; j<cashOnHand[i].length; j++) {
-        console.log(cashOnHand[i][j]);
+        total += cashOnHand[i][1];
       }
     }
+    cashOnHand = (total).toFixed(2);
     return cashOnHand
   }
     checkBalance(change);
