@@ -1,22 +1,24 @@
+/*
+Adding the toLowerCase(); method into my string copying "If" statement solved the problem of capital letters
+in examples testing false. Now almost every example is testing true--with the exception of two examples
+that both contain special characters. That should be straightforward to fix... I think. 
+*/
+
 function palindrome(str) {
     let str1 = "";
     let str2 = "";
     let regExp = /\s/;
     let regExpPunct = /[^\w\s]+/;
-
-    //This will iterate through each character of the string argument "str" and then push it into a new string.
+    
     for (let i = 0; i<str.length; i++) {
+    
     let gg = regExp.test(str[i]);
     let ff = regExpPunct.test(str[i]);
 
-        /*
-        gg is testing to see if the characters are letters, and ff is testing to see if they are punctuation marks.
-        The lack of punctuation caused trouble for me on the previous attempt. 
-        This attempt sees no change, but that is because I haven't accounted for capital letters yet. 
-        */
+    //This is the string copying "If" Statement that I mentioned in the comment at page top.
       if (ff == false){
         if (gg == false) {
-        str1 += str[i];
+        str1 += str[i].toLowerCase();
       }
       }
       
@@ -43,5 +45,5 @@ function palindrome(str) {
  // palindrome("eye");
   
   palindrome("A man, a plan, a canal. Panama");
-  console.log("The solution: " + palindrome("A man, a plan, a canal. Panama"));
+  console.log("The solution: " + palindrome("My age is 0, 0 si ega ym."));
 
