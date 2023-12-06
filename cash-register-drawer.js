@@ -1,5 +1,3 @@
-//This isn't going to work, but I'm sure that the solution is lodged somewhere in here.
-
 function checkCashRegister(price, cash, cid) {
     let change = cid;
     let registerObject = {
@@ -98,16 +96,10 @@ function checkCashRegister(price, cash, cid) {
         toBeGivenToCustomer -= .01;
       }
       ++pennies;
+  
+  
       
-      console.log("tbg pennies: " + pennies);
-      console.log("tbg nickels: " + nickels);
-      console.log("tbg dimes: " + dimes);
-      console.log("tbg quarters: " + quarters);
-      console.log("tbg singles: " + singles);
-      console.log("tbg fives: " + fives);
-      console.log("tbg tens: " + tens);
-      console.log("tbg twenties: " + twenties);
-      console.log("tbg hundreds: " + hundreds);
+  
   
     
     registerObject.change = changeArray;
