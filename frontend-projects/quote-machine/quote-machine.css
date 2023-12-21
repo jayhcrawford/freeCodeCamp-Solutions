@@ -1,0 +1,155 @@
+    :root {
+        --faint-text: lightgrey;
+        --body-text: black;
+        --box-shadow: black;
+        --generate-gradient: linear-gradient(180deg, white, rgb(211, 211, 211));
+        --generate-hover: linear-gradient(180deg, rgb(211, 211, 211), rgb(211, 211, 211));
+        --generate-active: linear-gradient(180deg, rgb(160, 160, 160), rgb(211, 211, 211));
+    }
+
+
+    * {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 16px;
+    }
+
+    button {
+        cursor: pointer;
+    }
+
+
+
+    /*--ID's--*/
+
+    #quote-box-wrapper {
+        /*this wraps #quote-box*/
+        display: flex;
+        justify-content: center;
+        margin-top: 3rem;
+    }
+
+    #quote-box {
+        /*this contains the quote machine elements*/
+        box-shadow: 5px 5px 10px var(--box-shadow);
+        min-height: 100px;
+        min-width: 460px;
+        max-width: 461px;
+    }
+
+    #jay-line {
+        /*this is the tagline at the bottom of the box that says, "Jay's Random Quote Generator"*/
+        margin: 1rem 2.5rem 1rem 1rem;
+        color: var(--faint-text);
+        text-align: right;
+        font-size: 12px;
+    }
+
+    #whole-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    #whole-text-wrapper {
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #quote-and-author {
+        /*this styles the div of both the quote and author*/
+        border: 2px solid var(--faint-text);
+        margin: 2rem;
+        box-shadow: 4px 4px 5px var(--faint-text);
+        padding-bottom: 2rem;
+    }
+
+
+    #text {
+        /*this contains the quote generated*/
+        padding-top: .5rem;
+        line-height: 34px;
+        display: block;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    #text::before, 
+    #text::after  {
+        /*this adds quotation marks before and after #text*/
+        font-size: 30px;
+        line-height: 16px;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        font-style: italic;
+        color: var(--faint-text);
+    }
+
+    #text::before {
+        /*this adds quotation marks before and after #text*/
+        content: "\"";
+    }
+
+    #text::after {
+        content: "\"";
+    }
+
+
+    #author {
+        /*this styles the author's name div*/
+        text-align: right;
+        padding-right: 3rem;
+        font-style: italic;
+        font-size: 20px;
+        color: var(--body-text);
+    }
+
+    #author::before {
+        /*this puts an em-dash before the author's name*/
+        content: "-- ";
+        color: var(--body-text)
+    }
+
+    #buttons {
+        /*the div that contains generate new quote and share on X buttons*/
+        margin-top: 1.3rem;
+        display: flex;
+        justify-content: right;
+        margin: 0 2rem 0 0;
+    }
+
+    #twitter-button {
+        /*this ID styles the twitter button*/
+        background-color: black;
+        color: white;
+        padding: .2rem 1rem .2rem 1rem;
+        margin: .5rem;
+        box-shadow: 2px 2px 5px var(--faint-text);
+    }
+
+    #twitter-button:hover {
+        background-color: darkslategrey;
+    }
+
+
+    #new-quote {
+        /*ID for "Generate New Quote" button*/
+        padding: .2rem 1rem .2rem 1rem;
+        margin: .5rem;
+        border-radius: 4px;
+        border-color: lightgrey;
+        background-image: var(--generate-gradient);
+        box-shadow: 2px 2px 5px var(--faint-text);
+    }
+
+    #new-quote:hover {
+        background-image: var(--generate-hover);
+    }
+
+    #new-quote:active {
+        background-image: var(--generate-active);
+    }
+
+
+    /*-- (close) ID's--*/
