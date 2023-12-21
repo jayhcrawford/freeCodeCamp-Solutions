@@ -23,8 +23,12 @@
         </div>
 
         <div id="buttons">
-            <button id="new-quote" onclick="myQuote()"><text>Generate New Quote <i class="fa fa-refresh" aria-hidden="true"></i></text></button>
-            <a id="tweet-quote" href="http://www.twitter.com/intent/tweet"><button id="twitter-button"><span>Share On <i class="fa-brands fa-x-twitter"></i></span></button></a>
+            <div id="button1">
+                <button id="new-quote" onclick="myQuote()"><text>Generate New Quote <i class="fa fa-refresh" aria-hidden="true"></i></text></button>
+            </div>
+            <div id="button2">
+                <a id="tweet-quote" data-size="large" class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20World%20jay%20is%20cool"><button id="twitter-button"></button></a>
+            </div>
         </div>
         <p id="jay-line">Jay's Random Quote Generator</p>
         
